@@ -40,6 +40,7 @@ class BookshelvesController < ApplicationController
   # PATCH/PUT /bookshelves/1
   # PATCH/PUT /bookshelves/1.json
   def update
+    params[:bookshelf][:book_ids] ||= []
     respond_to do |format|
       if @bookshelf.update(bookshelf_params)
         format.html { redirect_to @bookshelf, notice: 'Bookshelf was successfully updated.' }
@@ -69,6 +70,6 @@ class BookshelvesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookshelf_params
-      params.require(:bookshelf).permit(:name, :user_id)
+      params.require(:bookshelf).permit(:name, :user_id, {:book_ids => []})
     end
 end

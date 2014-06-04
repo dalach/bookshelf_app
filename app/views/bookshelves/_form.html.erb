@@ -19,6 +19,15 @@
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
   </div>
+
+  <% Book.all.each do |book| %>
+    <div>
+      <%= check_box_tag "bookshelf[book_ids][]", book.id, @bookshelf.books.include?(book) %>
+      <%= book.title %>
+    </div>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

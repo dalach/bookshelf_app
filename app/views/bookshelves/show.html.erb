@@ -10,5 +10,14 @@
   <%= @bookshelf.user_id %>
 </p>
 
+<ul>
+  <% Book.all.each do | book | %>
+    <% if @bookshelf.book_ids.include?(book.id) %>
+      <li><%= link_to book.title, book_path%></li>
+    <% end %>
+  <% end %>
+</ul>
+
+
 <%= link_to 'Edit', edit_bookshelf_path(@bookshelf) %> |
 <%= link_to 'Back', bookshelves_path %>
