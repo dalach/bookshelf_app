@@ -1,28 +1,21 @@
 class BookshelvesController < ApplicationController
   before_action :set_bookshelf, only: [:show, :edit, :update, :destroy]
 
-  # GET /bookshelves
-  # GET /bookshelves.json
   def index
     @bookshelves = Bookshelf.all
   end
 
-  # GET /bookshelves/1
-  # GET /bookshelves/1.json
   def show
   end
 
-  # GET /bookshelves/new
   def new
     @bookshelf = Bookshelf.new
+    @bookshelf.build_user
   end
 
-  # GET /bookshelves/1/edit
   def edit
   end
 
-  # POST /bookshelves
-  # POST /bookshelves.json
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)
 
@@ -37,8 +30,6 @@ class BookshelvesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bookshelves/1
-  # PATCH/PUT /bookshelves/1.json
   def update
     params[:bookshelf][:book_ids] ||= []
     respond_to do |format|
@@ -52,8 +43,6 @@ class BookshelvesController < ApplicationController
     end
   end
 
-  # DELETE /bookshelves/1
-  # DELETE /bookshelves/1.json
   def destroy
     @bookshelf.destroy
     respond_to do |format|
@@ -63,13 +52,11 @@ class BookshelvesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_bookshelf
       @bookshelf = Bookshelf.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def bookshelf_params
-      params.require(:bookshelf).permit(:name, :user_id, {:book_ids => []})
+      params.require(:bookshelf).permit(:name, :user_id, {:book_ids => []}, :user_attributes => [:email, :id])
     end
 end
