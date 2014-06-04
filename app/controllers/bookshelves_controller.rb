@@ -2,7 +2,6 @@ class BookshelvesController < ApplicationController
   before_action :set_bookshelf, only: [:show, :edit, :update, :destroy]
 
   def index
-    #@bookshelves = Bookshelf.all
   end
 
   def show
@@ -10,7 +9,6 @@ class BookshelvesController < ApplicationController
 
   def new
     @bookshelf = Bookshelf.new
-    @bookshelf.build_user
   end
 
   def edit
