@@ -12,7 +12,7 @@
 
 <p>
   <strong>Cover photo:</strong>
-  <%= @book.cover_photo %>
+  <%= image_tag(@book.cover_photo_url, :width => 300) if @book.cover_photo.present? %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
