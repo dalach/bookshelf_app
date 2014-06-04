@@ -18,6 +18,7 @@ class BookshelvesController < ApplicationController
 
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)
+    @bookshelf.user_id = current_user.id
 
     respond_to do |format|
       if @bookshelf.save
