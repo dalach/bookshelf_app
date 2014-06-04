@@ -1,21 +1,20 @@
-<h1>Listing bookshelves</h1>
+<h1>Bookshelf</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th></th>
       <th>User</th>
       <th colspan="3"></th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @bookshelves.each do |bookshelf| %>
       <tr>
-        <td><%= bookshelf.name %></td>
+        <td><%= link_to bookshelf.name, bookshelf %></td>
         <td><%= bookshelf.user_id %></td>
-        <td><%= link_to 'Show', bookshelf %></td>
-        <td><%= link_to 'Edit', edit_bookshelf_path(bookshelf) %></td>
         <td><%= link_to 'Destroy', bookshelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

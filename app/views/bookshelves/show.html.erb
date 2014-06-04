@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bookshelf.name %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @bookshelf.user_id %>
-</p>
+<h2><%= @bookshelf.name %></h2>
 
 <ul>
   <% Book.all.each do | book | %>
@@ -19,5 +12,4 @@
 </ul>
 
 
-<%= link_to 'Edit', edit_bookshelf_path(@bookshelf) %> |
-<%= link_to 'Back', bookshelves_path %>
+<%= link_to 'Add more books', edit_bookshelf_path(@bookshelf) %> |
