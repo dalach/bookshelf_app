@@ -2,7 +2,7 @@ class BookshelvesController < ApplicationController
   before_action :set_bookshelf, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookshelves = Bookshelf.all
+    #@bookshelves = Bookshelf.all
   end
 
   def show

@@ -11,11 +11,10 @@
   </thead>
 
   <tbody>
-    <% @bookshelves.each do |bookshelf| %>
+    <% if current_user.bookshelf %>
       <tr>
-        <td><%= link_to bookshelf.name, bookshelf %></td>
-        <td><%= bookshelf.user_id %></td>
-        <td><%= link_to 'Destroy', bookshelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to current_user.bookshelf.name, current_user.bookshelf %></td>
+        <td><%= link_to 'Destroy', current_user.bookshelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +22,6 @@
 
 <br>
 
-<%= link_to 'New Bookshelf', new_bookshelf_path %>
+  <% unless current_user.bookshelf %>
+    <%= link_to 'New Bookshelf', new_bookshelf_path %>
+  <% end %>
