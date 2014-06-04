@@ -1,27 +1,14 @@
 <h2>Bookshelf</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>User</th>
-      <th colspan="3"></th>
-
-    </tr>
-  </thead>
-
-  <tbody>
-    <% if current_user.bookshelf %>
-      <tr>
-        <td><%= link_to current_user.bookshelf.name, current_user.bookshelf %></td>
-        <td><%= link_to 'Destroy', current_user.bookshelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-  <% unless current_user.bookshelf %>
-    <%= link_to 'New Bookshelf', new_bookshelf_path %>
+<% if current_user.bookshelf %>
+  <p>
+    <%= link_to current_user.bookshelf.name, current_user.bookshelf %>
+    <%= link_to 'Destroy', current_user.bookshelf, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
   <% end %>
+
+<% unless current_user.bookshelf %>
+  <p>
+    <%= link_to 'New Bookshelf', new_bookshelf_path %>
+  </p>
+<% end %>
