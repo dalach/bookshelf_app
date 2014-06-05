@@ -1,4 +1,4 @@
-=Bookshelf app#
+=Bookshelf app
 User can add books to their bookshelf.
 
 Inspired by Lunar Logic Hackathon.
@@ -14,3 +14,5 @@ Created in less than 24h, aware of own inperfections.
 * `Rails 4.1.1`
 * `Ruby 2.1.1`
 
+==Front-end
+* none
