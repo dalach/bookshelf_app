@@ -10,14 +10,13 @@
 <body>
 
   <nav>
-    <ul>
-      <li><%= link_to 'Home', bookshelves_path %></li>
-      <li><%= link_to 'Books', books_path %></li>
-      <li>'Add books'</li>
-      <li><%= link_to 'Back', :back %></li>
-    </ul>
-
     <p class="navbar-text pull-right">
+      <%= link_to 'Back', :back %>
+      <%= link_to 'Books', books_path %>
+      <% if user_signed_in? %>
+        <%= link_to 'Add books', current_user.bookshelf %>
+      <% end %>
+
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.name %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
