@@ -9,4 +9,6 @@
   <%= image_tag(@book.cover_photo_url, :width => 300) if @book.cover_photo.present? %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %>
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_book_path(@book) %>
+<% end %>

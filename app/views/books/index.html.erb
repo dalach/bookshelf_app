@@ -14,8 +14,10 @@
       <tr>
         <td><%= link_to book.title, book %></td>
         <td><%= book.author %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +25,6 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<% if current_user.admin? %>
+  <%= link_to 'New Book', new_book_path %>
+<% end %>
