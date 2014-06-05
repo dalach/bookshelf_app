@@ -6,7 +6,7 @@
 <ul>
   <% Book.all.each do | book | %>
     <% if @bookshelf.book_ids.include?(book.id) %>
-      <li><%= link_to book.title, book_path%></li>
+      <li><%= link_to book.title, book_path(book)%></li>
     <% end %>
   <% end %>
 </ul>

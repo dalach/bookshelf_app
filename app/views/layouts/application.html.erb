@@ -19,11 +19,11 @@
 
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.name %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <%= link_to 'Edit profile', edit_user_registration_path%> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
       <% end %>
     </p>
   </nav>
@@ -38,7 +38,18 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-  <%= yield %>
+  <div>
+    <%= yield %>
+  </div>
+
+  <footer>
+    User can add books to their bookshelf.<br><br>
+
+    Inspired by <a href="https://www.facebook.com/photo.php?fbid=10151842045359229&set=a.10150345717874229.301624.123301629228&type=1&theater">Lunar Logic Hackathon</a><br>
+    Created in less than 24h, aware of own inperfections.<br><br>
+
+    By Wiktoria Dalach. <a href="https://github.com/dalach/bookshelf_app">GitHub repository </a> 
+  </footer>
 
 </body>
 </html>
