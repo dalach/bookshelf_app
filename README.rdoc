@@ -1,28 +1,14 @@
-== README
+#Bookshelf app#
+User can add books to their bookshelf.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is [an example](http://example.com/ "Title") inline link.
+Inspired by [Lunar Logic Hackathon](https://www.facebook.com/photo.php?fbid=10151842045359229&set=a.10150345717874229.301624.123301629228&type=1&theater).
+<br>Created in less than 24h, aware of own inperfections.<br>
+###Create admin###
+* `rails c`
+* select User, for example: `User.first.update_attribute(:admin, true)`
+<br>
+###Back-end###
+* `Rails 4.1.1`
+* `Ruby 2.1.1`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
