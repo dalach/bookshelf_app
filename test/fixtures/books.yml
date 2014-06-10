@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  author: MyString
-  cover_photo: MyString
+  title: The Hound of the Baskervilles
+  author: Artura Conan Doyle
+  cover_photo: cover_photo.png
 
 two:
-  title: MyString
-  author: MyString
-  cover_photo: MyString
+  title: Harry Potter and the Philosopher's Stone)
+  author: Joanne Kathleen Rowling
+  cover_photo: cover_photo.jpg
